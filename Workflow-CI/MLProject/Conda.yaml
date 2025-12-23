@@ -1,0 +1,15 @@
+name: mlflow-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - scikit-learn
+  - mlflow
+  - pandas
+  - matplotlib
+  - seaborn
+  - pip:
+      - dagshub
+      - imbalanced-learn
