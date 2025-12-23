@@ -1,9 +1,0 @@
-name: Tugas_Akhir_MSML 
-
-conda_env: conda.yaml  
-
-entry_points:
-  main:
-    command: "python modelling.py"  
-    parameters:
-      dataset: {type: str, default: "dataset/PRSA_Data_Aotizhongxin.csv"}  
