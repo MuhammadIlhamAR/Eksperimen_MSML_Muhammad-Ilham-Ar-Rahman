@@ -32,7 +32,7 @@ jobs:
 
       - name: Run MLflow Project
         run: |
-          mlflow run MLProject --env-manager=local
+          mlflow run MLProject --env-manager=conda
 
       - name: Get latest MLflow run_id
         run: |
