@@ -1,0 +1,43 @@
+name: Model Training and Logging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout code dari repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Set up Python 3.8
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    # Install dependencies dari requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r MLProject/requirements.txt  # pastikan path benar
+
+    # Install MLflow jika belum terpasang
+    - name: Install MLflow
+      run: |
+        pip install mlflow
+
+    # Jalankan model training dari file modelling.py
+    - name: Run the model training
+      run: |
+        python MLProject/modelling.py
+
+    # Log ke MLflow (jika kamu ingin menjalankan UI MLflow, pastikan sudah siap sebelumnya)
+    - name: Log to MLflow
+      run: |
+        mlflow ui &  # Menjalankan UI MLflow di background
+        sleep 10  # Tunggu beberapa detik agar UI MLflow bisa berjalan
