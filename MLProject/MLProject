@@ -10,11 +10,4 @@ entry_points:
       test_size: {type: float, default: 0.2}
       mlflow_tracking_uri: {type: str, default: ""}
       experiment_name: {type: str, default: "Tugas Akhir MSML"}
-    command: >
-      python Modelling.py
-      --input_file "{input_file}"
-      --n_estimators {n_estimators}
-      --random_state {random_state}
-      --test_size {test_size}
-      --mlflow_tracking_uri "{mlflow_tracking_uri}"
-      --experiment_name "{experiment_name}"
+    command: "python modelling.py {input_file} {n_estimators} {random_state} {test_size} {mlflow_tracking_uri} {experiment_name}"
