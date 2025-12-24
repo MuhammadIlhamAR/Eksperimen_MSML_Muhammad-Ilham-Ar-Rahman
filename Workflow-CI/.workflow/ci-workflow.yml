@@ -34,7 +34,7 @@ jobs:
     # Jalankan model training dari file modelling.py
     - name: Run the model training
       run: |
-        python MLProject/modelling.py
+        python Workflow-CI/MLProject/modelling.py
 
     # Log ke MLflow (jika kamu ingin menjalankan UI MLflow, pastikan sudah siap sebelumnya)
     - name: Log to MLflow
