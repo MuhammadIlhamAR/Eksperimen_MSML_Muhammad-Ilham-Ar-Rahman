@@ -42,10 +42,12 @@ jobs:
           mlflow run . \
             --env-manager=conda \
             --experiment-name="Tugas Akhir MSML" \
-            -P n_estimators=150 \
-            -P max_depth=25 \
-            -P target_variable="RAIN_Category" \
-            -P data_url="MLProject/PRSA_Data_Aotizhongxin_preprocessing.csv"
+            -P input_file="PRSA_Data_Aotizhongxin_preprocessing.csv" \
+            -P n_estimators=100 \
+            -P random_state=42 \
+            -P test_size=0.2 \
+            -P mlflow_tracking_uri="your_mlflow_tracking_uri" \
+            -P experiment_name="Tugas Akhir MSML"
       
       - name: Upload Model Artifacts
         uses: actions/upload-artifact@v4
