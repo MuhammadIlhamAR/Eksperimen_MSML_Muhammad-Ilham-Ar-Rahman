@@ -23,7 +23,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install mlflow dagshub pandas scikit-learn
+          # Ditambah seaborn dan matplotlib biar gak error pas modelling.py jalan
+          pip install mlflow dagshub pandas scikit-learn seaborn matplotlib
 
       - name: Run MLflow Project
         env:
@@ -31,5 +32,4 @@ jobs:
           MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
           cd MLProject-Folder
-          
           mlflow run . --env-manager=local
