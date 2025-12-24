@@ -1,0 +1,12 @@
+name: TugasAkhir-MSML
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      input_file: {type: str, default: "PRSA_Data_Aotizhongxin_preprocessing.csv"}
+      n_estimators: {type: int, default: 100}
+      random_state: {type: int, default: 42}
+      test_size: {type: float, default: 0.2}
+      mlflow_tracking_uri: {type: str, default: "https://dagshub.com/m.ilham2408/my-first-repo.mlflow"}
+    command: "python modelling.py --input_file {input_file} --n_estimators {n_estimators} --random_state {random_state} --test_size {test_size} --mlflow_tracking_uri {mlflow_tracking_uri}"
