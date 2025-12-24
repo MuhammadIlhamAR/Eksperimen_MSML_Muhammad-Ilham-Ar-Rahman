@@ -22,7 +22,7 @@ jobs:
           pip install pandas numpy scikit-learn imbalanced-learn
 
       - name: Execute Automate Script
-        run: python preprocessing/automate_Muhammad Ilham Ar Rahman.py
+        run: python preprocessing/automate_Muhammad-Ilham-Ar-Rahman.py
 
       - name: Upload Processed Data
         uses: actions/upload-artifact@v4
