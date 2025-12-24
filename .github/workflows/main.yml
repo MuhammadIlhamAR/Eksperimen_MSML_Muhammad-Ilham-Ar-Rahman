@@ -1,30 +1,18 @@
-name: CI - Rainfall Training
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
+name: CI-MLflow
+on: [push]
 jobs:
   train:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.8'
-      
-      - name: Install Dependencies
-        run: |
-          pip install mlflow dagshub pandas scikit-learn matplotlib seaborn joblib
-
-      - name: Run MLflow Project
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.8'}
+      - name: Install
+        run: pip install mlflow dagshub pandas scikit-learn matplotlib seaborn
+      - name: Run
         env:
           MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USERNAME }}
           MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
           cd MLProject-Folder
-          mlflow run . --env-manager=local --experiment-name="Tugas Akhir MSML"
+          mlflow run . --env-manager=local
