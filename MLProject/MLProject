@@ -1,5 +1,5 @@
 name: TugasAkhir-MSML
-conda_env: environment.yml
+conda_env: conda.yaml
 
 entry_points:
   train:
