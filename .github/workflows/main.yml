@@ -12,41 +12,42 @@ on:
 jobs:
   train-model:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      
+
       - name: Install Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
           python-version: '3.12'
           activate-environment: mlflow-env
-      
+
       - name: Install MLflow
         shell: bash -l {0}
         run: |
           pip install mlflow==2.19.0
           mlflow --version
-      
+
       - name: Run MLflow Project
         shell: bash -l {0}
         run: |
           cd MLProject
           mlflow run . \
             --env-manager=conda \
+            --experiment-name="Tugas Akhir MSML" \
+            -P input_file="PRSA_Data_Aotizhongxin_preprocessing.csv" \
             -P n_estimators=100 \
             -P random_state=42 \
             -P test_size=0.2 \
-            -P target_variable="RAIN_Category" \
-            -P data_url="MLProject/PRSA_Data_Aotizhongxin_preprocessing.csv"
-      
+            -P mlflow_tracking_uri="https://dagshub.com/m.ilham2408/my-first-repo.mlflow"
+
       - name: Upload Model Artifacts
         uses: actions/upload-artifact@v4
         with:
