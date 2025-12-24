@@ -1,4 +1,4 @@
-name: CI - Rainfall Classification
+name: CI - Rainfall Classification to Dagshub
 
 on:
   push:
@@ -19,14 +19,17 @@ jobs:
       
       - name: Install Dependencies
         run: |
-          pip install mlflow dagshub pandas scikit-learn matplotlib seaborn joblib
+          pip install mlflow dagshub pandas scikit-learn matplotlib seaborn joblib 
 
       - name: Run MLflow Project
         env:
           MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USERNAME }}
           MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
-          # Menjalankan MLflow Project di root directory
+          # Masuk ke folder tempat file MLProject berada
+          cd MLProject-Folder
+          
+          # Jalankan MLflow Project dengan env lokal agar cepat
           mlflow run . \
             --env-manager=local \
             --experiment-name="Tugas Akhir MSML"
