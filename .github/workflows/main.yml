@@ -20,6 +20,9 @@ jobs:
       with:
         python-version: '3.12.7'
 
+    - name: Clear pip cache
+      run: python -m pip cache purge
+
     # Install dependencies dari requirements.txt
     - name: Install dependencies
       run: |
