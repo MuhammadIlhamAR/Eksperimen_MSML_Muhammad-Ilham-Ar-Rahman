@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 env:
-  CSV_URL: "MLproject/PRSA_Data_Aotizhongxin_preprocessing.csv" 
+  CSV_URL: "MLProject/PRSA_Data_Aotizhongxin_preprocessing.csv" 
   TARGET_VAR: "RAIN_Category"  
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Run MLflow Project
         run: |
-          mlflow run MLproject --env-manager=local
+          mlflow run MLProject --env-manager=local
 
       - name: Get latest MLflow run_id
         run: |
