@@ -1,4 +1,4 @@
-name: CI - Preprocessing Dataset
+name: CI - Preprocessing Automation
 
 on:
   push:
@@ -6,26 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-preprocessing:
+  preprocess:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: '3.8' 
 
       - name: Install Dependencies
         run: |
-          pip install pandas numpy scikit-learn imbalanced-learn
+          pip install pandas numpy scikit-learn imbalanced-learn 
 
-      - name: Execute Automate Script
-        run: python preprocessing/automate_Muhammad-Ilham-Ar-Rahman.py
+      - name: Run Automate Preprocessing
+        # SESUAIKAN: Pastikan "preprocessing" adalah nama folder lo 
+        # dan "automate_Irfan.py" adalah nama file lo
+        run: python preprocessing/automate_Muhammad-Ilham-Ar-Rahman.py 
 
-      - name: Upload Processed Data
+      - name: Upload Processed Dataset
         uses: actions/upload-artifact@v4
         with:
-          name: preprocessed-csv
+          name: preprocessed-dataset
           path: preprocessing/PRSA_Data_Aotizhongxin_preprocessing/PRSA_Data_Aotizhongxin_preprocessing.csv
