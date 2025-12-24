@@ -1,15 +1,13 @@
-name: mlflow-env
+name: rainfall_env
 channels:
-  - defaults
+  - conda-forge
 dependencies:
   - python=3.8
-  - mlflow
-  - pandas
-  - scikit-learn
-  - matplotlib
   - pip
   - pip:
-    - mlflow-skinny
-    - dagshub
-    - seaborn
-    - joblib
+      - mlflow
+      - pandas
+      - scikit-learn
+      - matplotlib
+      - seaborn
+      - dagshub
