@@ -1,5 +1,5 @@
 """
-Modelling.py
+modelling.py
 Standalone training script for the PRSA rainfall classification task.
 - Reads a preprocessed CSV (expects a 'RAIN_Category' column or numeric 'RAIN')
 - Trains a RandomForestClassifier
@@ -7,7 +7,7 @@ Standalone training script for the PRSA rainfall classification task.
 - Saves the trained model via mlflow.sklearn.log_model and locally with joblib
 
 Usage examples:
-python Modelling.py --input_file PRSA_Data_Aotizhongxin_preprocessing.csv --n_estimators 100 --random_state 42 --test_size 0.2 --mlflow_tracking_uri """https://dagshub.com/m.ilham2408/my-first-repo.mlflow""" --experiment_name "Tugas Akhir MSML"
+python modelling.py --input_file PRSA_Data_Aotizhongxin_preprocessing.csv --n_estimators 100 --random_state 42 --test_size 0.2 --mlflow_tracking_uri """https://dagshub.com/m.ilham2408/my-first-repo.mlflow""" --experiment_name "Tugas Akhir MSML"
 
 """
 
