@@ -1,18 +1,19 @@
-name: msml-env channels:
-
-conda-forge
-defaults dependencies:
-  python=3.8
-  pip
-  pandas
-  numpy
-  scikit-learn
-  imbalanced-learn
-  matplotlib
-  seaborn
-  joblib
-pip:
-  mlflow
-  dagshub
-  tensorflow>=2.6 # opsional tapi dibutuhkan jika kamu pakai mlflow.keras atau model Keras
-  kaggle
+name: msml-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - pandas
+  - numpy
+  - scikit-learn
+  - imbalanced-learn
+  - matplotlib
+  - seaborn
+  - joblib
+  - pip:
+    - mlflow
+    - dagshub
+    - cloudpickle
+    - scikit-optimize
