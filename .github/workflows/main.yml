@@ -41,7 +41,7 @@ jobs:
           cd MLProject
           mlflow run . \
             --env-manager=conda \
-            --experiment-name="Tugas Akhir MSML" \
+            --experiment-name="TugasAkhir-MSML" \
             -P n_estimators=150 \
             -P max_depth=25 \
             -P target_variable="RAIN_Category" \
