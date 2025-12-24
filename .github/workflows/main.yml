@@ -39,7 +39,6 @@ jobs:
           cd MLProject
           mlflow run . \
             --env-manager=conda \
-            --experiment-name="Tugas Akhir MSML" \
             -P input_file="PRSA_Data_Aotizhongxin_preprocessing.csv" \
             -P n_estimators=100 \
             -P random_state=42 \
