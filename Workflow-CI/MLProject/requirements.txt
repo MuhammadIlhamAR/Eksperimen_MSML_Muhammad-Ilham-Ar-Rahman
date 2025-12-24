@@ -1,22 +1,10 @@
-# MLflow dan dependencies yang digunakan
 mlflow==3.8.0
 scikit-learn==1.6.1
-imbalanced-learn==0.14.1
 pandas==2.2.2
 matplotlib==3.10.0
 seaborn==0.13.2
-
-# DagsHub untuk integrasi
-dagshub==0.6.4
-
-# Juga untuk data preprocessing dan visualisasi
-scipy==1.16.3
-joblib==1.5.3
+imbalanced-learn==0.14.1
 xgboost==3.1.2
-
-# Tensorflow dan dependensinya (Jika digunakan untuk model pembelajaran mendalam)
-tensorflow==2.19.0
-
-# Untuk analisis dan visualisasi tambahan
-plotly==5.24.1
-bokeh==3.7.3
+numpy==2.0.2
+joblib==1.5.3
+requests==2.32.4
