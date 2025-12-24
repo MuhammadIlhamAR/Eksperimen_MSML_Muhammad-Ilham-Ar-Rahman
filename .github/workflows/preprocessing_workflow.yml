@@ -1,4 +1,4 @@
-name: CI - Preprocessing Automation
+name: CI - Preprocessing Dataset
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  preprocess:
+  run-preprocessing:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -21,11 +21,11 @@ jobs:
         run: |
           pip install pandas numpy scikit-learn imbalanced-learn
 
-      - name: Run Automate Preprocessing
+      - name: Execute Automate Script
         run: python preprocessing/automate_Muhammad Ilham Ar Rahman.py
 
-      - name: Upload Processed Dataset
+      - name: Upload Processed Data
         uses: actions/upload-artifact@v4
         with:
-          name: preprocessed-dataset
-          path: preprocessing/namadataset_preprocessing/PRSA_Data_Aotizhongxin_preprocessed.csv
+          name: preprocessed-csv
+          path: preprocessing/namadataset_preprocessing/PRSA_Data_Aotizhongxin_preprocessing.csv
