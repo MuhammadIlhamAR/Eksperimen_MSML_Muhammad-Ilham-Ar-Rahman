@@ -1,19 +1,12 @@
-name: msml-env
+name: mlflow-env
 channels:
-  - conda-forge
   - defaults
 dependencies:
   - python=3.8
-  - pip
+  - mlflow
   - pandas
-  - numpy
   - scikit-learn
-  - imbalanced-learn
   - matplotlib
-  - seaborn
-  - joblib
+  - pip
   - pip:
-    - mlflow
-    - dagshub
-    - cloudpickle
-    - scikit-optimize
+    - mlflow-skinny
