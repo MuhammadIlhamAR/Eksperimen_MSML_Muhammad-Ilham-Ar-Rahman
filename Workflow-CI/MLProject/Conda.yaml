@@ -1,15 +1,18 @@
-name: mlflow-project
-channels:
-  - defaults
-  - conda-forge
-dependencies:
-  - python=3.8
-  - pandas
-  - scikit-learn
-  - mlflow
-  - matplotlib
-  - seaborn
-  - pip
-  - pip:
-      - imbalanced-learn
-      - dagshub
+name: msml-env channels:
+
+conda-forge
+defaults dependencies:
+python=3.8
+pip
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+matplotlib
+seaborn
+joblib
+pip:
+mlflow
+dagshub
+tensorflow>=2.6 # opsional tapi dibutuhkan jika kamu pakai mlflow.keras atau model Keras
+kaggle
