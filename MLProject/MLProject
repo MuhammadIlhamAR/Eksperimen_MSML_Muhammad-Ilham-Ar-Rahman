@@ -2,7 +2,7 @@ name: TugasAkhir-MSML
 conda_env: conda.yaml
 
 entry_points:
-  main:  
+  main:
     parameters:
       input_file: {type: str, default: "PRSA_Data_Aotizhongxin_preprocessing.csv"}
       n_estimators: {type: int, default: 100}
