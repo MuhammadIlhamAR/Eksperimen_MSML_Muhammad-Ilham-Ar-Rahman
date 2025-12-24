@@ -7,8 +7,8 @@ from imblearn.over_sampling import SMOTE
 def run_automation():
     # Gunakan path relatif dari root repository agar GitHub Actions tidak bingung
     input_path = "PRSA_Data_Aotizhongxin_raw/PRSA_Data_Aotizhongxin.csv"
-    output_dir = "preprocessing/namadataset_preprocessing"
-    output_file = f"{output_dir}/PRSA_Data_Aotizhongxin_preprocessed.csv"
+    output_dir = "preprocessing/PRSA_Data_Aotizhongxin_preprocessing"
+    output_file = f"{output_dir}/PRSA_Data_Aotizhongxin_preprocessing.csv"
 
     # Proses Preprocessing (Sesuai notebook eksperimen lo)
     df = pd.read_csv(input_path)
