@@ -1,9 +1,9 @@
-name: Tugas_Akhir_MSML 
-
+name: Tugas_Akhir_MSML
 conda_env: conda.yaml 
-
 entry_points:
   main:
-    command: "python modelling.py" 
+    command: "python Modelling.py"  
     parameters:
-      dataset: {type: str, default: "dataset/PRSA_Data_Aotizhongxin.csv"} 
+      input_file: {type: str, default: "/content/drive/MyDrive/Tugas Akhir MSML/PRSA_Data_Aotizhongxin.csv"}
+      output_file: {type: str, default: "output.csv"}
+      model_type: {type: str, default: "RandomForestClassifier"} 
