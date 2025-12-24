@@ -41,7 +41,7 @@ keras==3.10.0
 lightgbm==4.6.0
 mlflow==3.8.0
 numpy==2.0.2
-optuna==2.11.1
+optuna>=2.11.1
 pandas==2.2.2
 pillow==11.3.0
 plotly==5.24.1
@@ -57,4 +57,5 @@ tqdm==4.67.1
 transformers==4.57.3
 wandb==0.23.1
 xgboost==3.1.2
+
 yellowbrick==1.5
