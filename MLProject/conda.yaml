@@ -10,5 +10,6 @@ dependencies:
   - pip
   - pip:
     - mlflow-skinny
-    - dagshub  # Tambahkan ini
+    - dagshub
     - seaborn
+    - joblib
