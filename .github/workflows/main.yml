@@ -1,47 +1,33 @@
-name: CI - MLProject
+name: MLflow Training Workflow
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
   train-model:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          python-version: '3.8'
 
-      - name: Install Dependencies (MLflow only)
+      - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install mlflow==2.19.0
-          mlflow --version
+          pip install mlflow pandas scikit-learn matplotlib joblib seaborn dagshub
 
-      - name: Run MLflow Project
+      - name: Run Training
+        env:
+          # Masukkan Token Dagshub lo di Settings > Secrets > Actions GitHub
+          MLFLOW_TRACKING_USERNAME: ${{ secrets.DAGSHUB_USERNAME }}
+          MLFLOW_TRACKING_PASSWORD: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
-          cd MLProject
-          mlflow run . \
-            --env-manager=conda \
-            --experiment-name="Tugas Akhir MSML" \
-            -P n_estimators=100 \
-            -P random_state=42 \
-            -P test_size=0.2 \
-            -P input_file="MLProject/PRSA_Data_Aotizhongxin_preprocessing.csv"
-
-      - name: Upload Model Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: model-artifacts
-          path: MLProject/mlruns/
-          retention-days: 30
+          python modelling.py \
+            --input_file "PRSA_Data_Aotizhongxin_preprocessing.csv" \
+            --n_estimators 100 \
+            --mlflow_tracking_uri "https://dagshub.com/m.ilham2408/my-first-repo.mlflow" \
+            --experiment_name "Tugas Akhir MSML"
