@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r MLProject/requirements.txt  # pastikan path benar
+        pip install -r Workflow-CI/MLProject/requirements.txt  
 
     # Install MLflow jika belum terpasang
     - name: Install MLflow
@@ -39,5 +39,5 @@ jobs:
     # Log ke MLflow (jika kamu ingin menjalankan UI MLflow, pastikan sudah siap sebelumnya)
     - name: Log to MLflow
       run: |
-        mlflow ui &  # Menjalankan UI MLflow di background
-        sleep 10  # Tunggu beberapa detik agar UI MLflow bisa berjalan
+        mlflow ui &  
+        sleep 10  
