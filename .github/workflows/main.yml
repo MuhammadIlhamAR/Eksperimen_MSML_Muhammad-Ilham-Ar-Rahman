@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 env:
-  CSV_URL: "MLProject/PRSA_Data_Aotizhongxin_preprocessing.csv" 
-  TARGET_VAR: "RAIN_Category"  
+  CSV_URL: "MLproject/train_pca.csv"
+  TARGET_VAR: "Credit_Score"
 
 jobs:
   build:
@@ -28,11 +28,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow
+          pip install mlflow scikit-learn pandas numpy matplotlib
 
       - name: Run MLflow Project
         run: |
-          mlflow run MLProject --env-manager=conda
+          mlflow run MLProject --env-manager=local
 
       - name: Get latest MLflow run_id
         run: |
